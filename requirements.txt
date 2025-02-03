@@ -1,0 +1,11 @@
+ipykernel
+ipython
+joblib
+jupyter
+matplotlib
+numpy
+pandas
+pyarrow
+scikit-learn
+scipy
+seaborn
