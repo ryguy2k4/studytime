@@ -28,3 +28,7 @@ I typically don't do much at all on Fridays.
 
 ## Future Work
 I want to fully automate the process of adding new data by using Apple Shortcuts and making a workflow with snakemake.
+
+<a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/m7pcv9r3loyldc8cb1m7" alt="trackgit-views" />
+</a>
