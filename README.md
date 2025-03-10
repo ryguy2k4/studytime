@@ -13,6 +13,20 @@ and copied the data into a csv file. Then I used python to make some visualizati
 Eventually, I realized structured had added functions to be used in Apple's Shortcuts app, and I took advantage of them to export all the data 
 for me automatically.
 
+## Repository Structure
+* `notebooks`: contains scratch work for data exploration and visualization
+* `src`: contains python scripts used to produce results
+* `results`: contains visualizations illustrating the data
+
+## Reproducibility
+
+### Environment
+All packages used are listed in `requirements.txt`. A detailed document on the computing environment can be found in `environment.md`
+
+### Workflow Automation
+I used snakemake to create a reproducible workflow. See `Snakefile` in the root directory.
+
+
 ## Results
 ![Alt text](/results/stackplot_by_class.png?raw=true "Stackplot By Class")
 
@@ -21,13 +35,19 @@ and Spring 2025 is proving to be especially tough.
 
 
 
-![Alt text](/results/day_of_week_barplot.png?raw=true "Day of Week Barplot")
+![Alt text](/results/barplot_by_weekday.png?raw=true "Day of Week Barplot")
 
 The above barplot shows how much time I spent studying on average each weekday per semester. My study habits can vary day to day, and I see that
 I typically don't do much at all on Fridays.
 
+![Alt text](/results/heatmap_by_weekday.png?raw=true "Day of Week Barplot")
+
+The above heatmap shows at which times during the week I most frequently spend studying.
+
 ## Future Work
-I want to fully automate the process of adding new data by using Apple Shortcuts and making a workflow with snakemake.
+* Explore new visualizations to expand my knowledge of data visualization.
+* Analyze additional variables available to look at, such as assignment due dates and assignment names.
+* Draw conclusions to improve my study habits in the future.
 
 <a href="https://trackgit.com">
 <img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/m7pcv9r3loyldc8cb1m7" alt="trackgit-views" />
