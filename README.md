@@ -1,14 +1,13 @@
 # studytime
 
 ## Overview
-When I first started college, I needed to find a way to organize my time; I needed some sort of planner. I discovered an app called
-[Structured](https://structured.app/), which I really liked. It had a feature called the inbox where you could put a list of tasks that 
-needed to be done, and also a timeline where you could assign the tasks and time-block your day. I would add all of my outstanding assignments 
-to my inbox assigned them a time when I did them.
+When I first started college, I needed to find a way to organize my time; I needed some sort of planner. I discovered an app that I liked called
+[Structured](https://structured.app/). It had a feature called the inbox to list task that needed to be done, and also a timeline where you could
+assign the tasks and time-block your day. I made use of both of these features to organize my time.
 
-After my freshman year, I had learned quite a bit about how to do data science in python. Since I had recorded literally every assignment or 
-time spent studying into structured, I had a good source of data available to me. There was no way to export data, so I manually went through 
-and copied the data into a csv file. Then I used python to make some visualizations with pandas, matplotlib, and seaborn.
+After my freshman year, I had learned quite a lot about doing data science in python. Since I had recorded literally all the time I spent on schoolwork
+into structured, I had a good source of data available to me. There was no way to export data, so I manually went through and copied the data into
+a csv file. Then I used python to make some visualizations with pandas, matplotlib, and seaborn.
 
 Eventually, I realized structured had added functions to be used in Apple's Shortcuts app, and I took advantage of them to export all the data 
 for me automatically.
