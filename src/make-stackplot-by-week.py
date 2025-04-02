@@ -60,7 +60,7 @@ for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
     if (x == 1):
         ax[x,y].set_xlabel("Week")
     if (y == 0):
-        ax[x,y].set_ylabel("Duration (hrs)")
+        ax[x,y].set_ylabel("Duration (min)")
 
     # Get bar positions and heights
     x_positions = np.arange(len(df1))  # Adjust if x-ticks are different
@@ -83,7 +83,8 @@ ax[1,0].set_title("Fall 2024")
 ax[1,1].set_title("Spring 2025")
 
 # Axis Limit
-plt.xlim(1, 17)
+plt.xlim(-0.5, 17)
+plt.ylim(0, 2000)
 
 plt.tight_layout()
 fig.savefig('results/stackplot_by_class.png')
