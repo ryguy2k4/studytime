@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+from scipy.interpolate import interp1d
+import numpy as np
 
 ### DATA
 master = pd.read_csv("data/master/studytime.csv")
@@ -52,13 +54,25 @@ for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
         y=1
 
     df1 = to_stack_plot_data(master, term, classes_and_colors[term]['order'])
-    ax[x,y].stackplot(df1.index, [df1[col]/60 for col in df1.columns], labels=df1.columns, colors=classes_and_colors[term]['colors'])
+    df1.plot(kind='bar', stacked=True, color=classes_and_colors[term]['colors'], width=1, ax=ax[x,y])
     ax[x,y].grid(axis='y', ls='dotted')
     ax[x,y].legend(df1.columns)
     if (x == 1):
         ax[x,y].set_xlabel("Week")
     if (y == 0):
         ax[x,y].set_ylabel("Duration (hrs)")
+
+    # Get bar positions and heights
+    x_positions = np.arange(len(df1))  # Adjust if x-ticks are different
+    y_heights = df1.sum(axis=1).values  # Sum if stacked, or use specific column
+
+    # Interpolate for a smooth curve
+    x_smooth = np.linspace(x_positions.min(), x_positions.max(), 100)
+    interp_func = interp1d(x_positions, y_heights, kind='cubic')
+    y_smooth = interp_func(x_smooth)
+
+    # Plot the smooth curve
+    ax[x, y].plot(x_smooth, y_smooth, color='black', linewidth=2, linestyle='dotted')
 
 
 # FIGURE
