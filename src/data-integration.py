@@ -45,6 +45,7 @@ def prepare_data(filename, term):
     if term != 'fa23':
         df["week"] = df["start_date"].apply(lambda x: x.week - df.iloc[0]['start_date'].week + 1)
     else:
+        print("fa23")
         df["week"] = df["start_date"].apply(lambda x: x.week - 34 + 1)
 
     # order dataframe
@@ -65,7 +66,7 @@ fa24['course'] = fa24['course'].replace({"Chem": "CHEM 102/103", "Aces": "ACES 1
 fa24 = fa24[fa24['course'] != 'Research']
 
 sp25 = prepare_data("data/raw/sp25.json", 'sp25')
-sp25['course'] = sp25['course'].replace({"Chem": "CHEM 104/105", "CS": "CS 307", "Astro": "ASTR 405", "Geol": "GEOL 432"})
+sp25['course'] = sp25['course'].replace({"Chem": "CHEM 104/105", "CS": "CS 307", "Astro": "ASTR 405", "Geol": "GEOL 432", "RST": "RST 100"})
 
 master = pd.concat([fa23, sp24, fa24, sp25])
 master.to_csv("data/master/studytime.csv", index=False)
