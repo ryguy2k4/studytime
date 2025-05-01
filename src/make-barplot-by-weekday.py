@@ -20,8 +20,8 @@ classes_and_colors = {
         'colors' : ['orange', 'yellow', 'green', 'blue', 'tan']
     },
     'sp25': {
-        'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "Research"],
-        'colors' : ['orange', 'yellow', 'green', 'blue', 'pink']
+        'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "RST 100", "Research"],
+        'colors' : ['orange', 'yellow', 'green', 'blue', 'tan', 'pink']
     },
 }
 

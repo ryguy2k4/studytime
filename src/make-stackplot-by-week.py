@@ -21,8 +21,8 @@ classes_and_colors = {
         'colors' : ['orange', 'yellow', 'green', 'blue', 'tan']
     },
     'sp25': {
-        'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "Research"],
-        'colors' : ['orange', 'yellow', 'green', 'blue', 'pink']
+        'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "RST 100", "Research"],
+        'colors' : ['orange', 'yellow', 'green', 'blue', 'tan', 'pink']
     },
 }
 
@@ -33,11 +33,15 @@ def to_stack_plot_data(master, term, order=[]):
     df = df.groupby(['week']).agg('sum')
     if order != []:
         df = df[order]
+    # Ensure all weeks (1 to 17) are present, filling missing weeks with 0
+    all_weeks = pd.Index(range(1, 18), name='week')  # Define the full range of weeks
+    df = df.reindex(all_weeks, fill_value=0)
+    
     return df
 
 ### PLOT
 
-fig, ax = plt.subplots(2,2, figsize=[7.5,7.5], sharey=True, sharex=True)
+fig, ax = plt.subplots(2,2, figsize=[10,10], sharey=True, sharex=True)
 
 for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
     if i == 0:
@@ -60,19 +64,9 @@ for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
     if (x == 1):
         ax[x,y].set_xlabel("Week")
     if (y == 0):
-        ax[x,y].set_ylabel("Duration (min)")
+        ax[x,y].set_ylabel("Duration (hrs)")
 
-    # Get bar positions and heights
-    x_positions = np.arange(len(df1))  # Adjust if x-ticks are different
-    y_heights = df1.sum(axis=1).values  # Sum if stacked, or use specific column
-
-    # Interpolate for a smooth curve
-    x_smooth = np.linspace(x_positions.min(), x_positions.max(), 100)
-    interp_func = interp1d(x_positions, y_heights, kind='cubic')
-    y_smooth = interp_func(x_smooth)
-
-    # Plot the smooth curve
-    ax[x, y].plot(x_smooth, y_smooth, color='black', linewidth=2, linestyle='dotted')
+    ax[x,y].set_xlim(-0.5, 17)
 
 
 # FIGURE
