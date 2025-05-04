@@ -64,9 +64,10 @@ for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
     if (x == 1):
         ax[x,y].set_xlabel("Week")
     if (y == 0):
-        ax[x,y].set_ylabel("Duration (hrs)")
+        ax[x,y].set_ylabel("Duration (min)")
 
     ax[x,y].set_xlim(-0.5, 17)
+    ax[x,y].set_ylim(0, 3000)
 
 
 # FIGURE
