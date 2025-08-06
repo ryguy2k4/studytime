@@ -13,7 +13,7 @@ Then I used python to make some visualizations with pandas, matplotlib, and seab
 * `results`: contains visualizations illustrating the data
 
 ## Reproducibility
-This analysis is containerized using Docker and automated using Snakemake. To reproduce the results, run the docker image via the `runall.sh` script.
+This analysis is containerized using Docker and automated using Snakemake. To reproduce the results, run the docker image via the `runall.sh` script. However, I have not published the raw data due to privacy reasons.
 
 ## Results
 ![Alt text](/results/stackplot_by_class.png?raw=true "Stackplot By Class")
