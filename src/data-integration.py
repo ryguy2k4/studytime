@@ -87,8 +87,11 @@ fa24 = fa24[fa24['course'] != 'Research']
 sp25 = prepare_data("data/raw/sp25.json", 'sp25')
 sp25['course'] = sp25['course'].replace({"Chem": "CHEM 104/105", "CS": "CS 307", "Astro": "ASTR 405", "Geol": "GEOL 432", "RST": "RST 100"})
 
+fa25 = prepare_data("data/raw/fa25.json", 'fa25')
+fa25['course'] = fa25['course'].replace({"Math": "MATH 285", "436": "GEOL 436", "497": "GEOL 497", "IS": "IS 467", "Phys": "PHYS 225"})
+
 # combine all semesters
-master = pd.concat([fa23, sp24, fa24, sp25])
+master = pd.concat([fa23, sp24, fa24, sp25, fa25])
 
 # add course group column
 ds_group = ['STAT 107', 'STAT 207', 'IS 477', 'CS 307', 'IS 467']

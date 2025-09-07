@@ -23,6 +23,10 @@ classes_and_colors = {
         'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "RST 100", "Research"],
         'colors' : ['orange', 'yellow', 'green', 'blue', 'tan', 'pink']
     },
+    'fa25': {
+        'order' : ["MATH 285", "GEOL 436", "GEOL 497", "IS 467", "PHYS 225", "Research"],
+        'colors' : ['red', 'green', 'green', 'orange', 'purple', 'pink']
+    },
 }
 
 def to_weekday_data(master, term, order=[]):
@@ -34,9 +38,9 @@ def to_weekday_data(master, term, order=[]):
 
 
 ### PLOT
-fig, ax = plt.subplots(2,2, figsize=[5,5], sharey=True, sharex=True)
+fig, ax = plt.subplots(3,2, figsize=[8,11], sharey=True, sharex=True)
 
-for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
+for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25', 'fa25']):
     if i == 0:
         x=0
         y=0
@@ -49,6 +53,9 @@ for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25']):
     if i == 3:
         x=1
         y=1
+    if i == 4:
+        x=2
+        y=0
 
     df = to_weekday_data(master, term, classes_and_colors[term]['order'])
     sns.barplot(df.sum(axis=1), errorbar=('ci', False), ax=ax[x,y], color='red')
@@ -62,6 +69,7 @@ ax[0,0].set_title("Fall 2023")
 ax[0,1].set_title("Spring 2024")
 ax[1,0].set_title("Fall 2024")
 ax[1,1].set_title("Spring 2025")
+ax[2,0].set_title("Fall 2025")
 
 plt.tight_layout()
 fig.savefig("results/barplot_by_weekday.png")
