@@ -5,7 +5,7 @@ When I first started college, I needed to find a way to organize my time; I need
 [Structured](https://structured.app/). It has an inbox to list tasks that need to be done, and also a timeline where you can time-block your day.
 I made use of both of these features to organize my time. After my freshman year, I had learned quite a lot about doing data science in python. 
 Since I had recorded literally all the time I spent on schoolwork into structured, I had a good source of data available to me. 
-Then I used python to make some visualizations with pandas, matplotlib, and seaborn.
+Then I used python to make some visualizations with pandas, matplotlib, and seaborn. After that, I used Tableau to present the data as a story.
 
 ## Repository Structure
 * `notebooks`: contains scratch work for data exploration and visualization
@@ -16,6 +16,16 @@ Then I used python to make some visualizations with pandas, matplotlib, and seab
 This analysis is containerized using Docker and automated using Snakemake. To reproduce the results, run the docker image via the `runall.sh` script. However, I have not published the raw data due to privacy reasons.
 
 ## Results
+
+### Tableau Story
+![Alt text](/results/studytime/Slide2.png?raw=true "Slide 2")
+![Alt text](/results/studytime/Slide3.png?raw=true "Slide 3")
+![Alt text](/results/studytime/Slide4.png?raw=true "Slide 4")
+![Alt text](/results/studytime/Slide5.png?raw=true "Slide 5")
+![Alt text](/results/studytime/Slide6.png?raw=true "Slide 6")
+
+
+### Matplotlib Visualizations
 ![Alt text](/results/stackplot_by_class.png?raw=true "Stackplot By Class")
 
 The above stack plot shows how much time I spent studying on a weekly basis per class per semester. So far my fall semesters are typically lighter 
