@@ -3,5 +3,5 @@
 docker run --rm \
   -v $(pwd):/project \
   -w /project \
-  studytime \
+  ghcr.io/ryguy2k4/studytime \
   snakemake --cores 1
