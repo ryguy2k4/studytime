@@ -2,3 +2,5 @@
 data
 .venv
 .snakemake
+notebooks/Neglected Songs.txt
+notebooks/playlists.ipynb
