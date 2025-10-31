@@ -20,12 +20,12 @@ classes_and_colors = {
         'colors' : ['orange', 'yellow', 'green', 'blue', 'tan']
     },
     'sp25': {
-        'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "RST 100", "Research"],
-        'colors' : ['orange', 'yellow', 'green', 'blue', 'tan', 'pink']
+        'order' : ["CS 307", "CHEM 104/105", "GEOL 432", "ASTR 405", "ASTR Research", "RST 100"],
+        'colors' : ['orange', 'yellow', 'green', 'blue', 'royalblue', 'tan']
     },
     'fa25': {
-        'order' : ["MATH 285", "GEOL 436", "GEOL 497", "IS 467", "PHYS 225", "Research"],
-        'colors' : ['red', 'green', 'green', 'orange', 'purple', 'pink']
+        'order' : ["IS 467", "PHYS 225", "MATH 285", "GEOL 436", "GEOL 497", "ASTR Research"],
+        'colors' : ['orange', 'purple', 'red', 'green', 'lime', 'royalblue']
     },
 }
 

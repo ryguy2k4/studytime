@@ -85,10 +85,10 @@ fa24['course'] = fa24['course'].replace({"Chem": "CHEM 102/103", "Aces": "ACES 1
 fa24 = fa24[fa24['course'] != 'Research']
 
 sp25 = prepare_data("data/raw/sp25.json", 'sp25')
-sp25['course'] = sp25['course'].replace({"Chem": "CHEM 104/105", "CS": "CS 307", "Astro": "ASTR 405", "Geol": "GEOL 432", "RST": "RST 100"})
+sp25['course'] = sp25['course'].replace({"Chem": "CHEM 104/105", "CS": "CS 307", "Astro": "ASTR 405", "Geol": "GEOL 432", "RST": "RST 100", "Research": "ASTR Research"})
 
 fa25 = prepare_data("data/raw/fa25.json", 'fa25')
-fa25['course'] = fa25['course'].replace({"Math": "MATH 285", "436": "GEOL 436", "497": "GEOL 497", "IS": "IS 467", "Phys": "PHYS 225"})
+fa25['course'] = fa25['course'].replace({"Math": "MATH 285", "436": "GEOL 436", "497": "GEOL 497", "IS": "IS 467", "Phys": "PHYS 225", "Research": "ASTR Research"})
 
 # combine all semesters
 master = pd.concat([fa23, sp24, fa24, sp25, fa25])
@@ -99,6 +99,7 @@ astro_group = ['ASTR 210', 'ASTR 310', 'ASTR 405']
 gened_group = ['HIST 164', 'ANTH 103', 'ACES 179', 'RST 100']
 geol_group = ['GEOL 107', 'GEOL 208', 'GEOL 432', 'GEOL 436', 'GEOL 497']
 stem_foundations = ['MATH 241', 'MATH 257', 'PHYS 213/214', 'CHEM 102/103', 'CHEM 104/105', 'MATH 285', 'PHYS 225']
+research = ["ASTR Research"]
 
 def find_group(course: str):
     if course in ds_group:
@@ -111,7 +112,7 @@ def find_group(course: str):
         return 'geol'
     elif course in stem_foundations:
         return 'stem'
-    elif course == 'Research':
+    elif course in research:
         return 'research'
     else:
         return 'other'
