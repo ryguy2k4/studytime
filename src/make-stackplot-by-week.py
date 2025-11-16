@@ -67,7 +67,7 @@ for i, term in enumerate(['fa23', 'sp24', 'fa24', 'sp25', 'fa25']):
     df1 = to_stack_plot_data(master, term, classes_and_colors[term]['order'])
     df1.plot(kind='bar', stacked=True, color=classes_and_colors[term]['colors'], width=1, ax=ax[x,y])
     ax[x,y].grid(axis='y', ls='dotted')
-    ax[x,y].legend(df1.columns)
+    ax[x,y].legend(df1.columns, fontsize=6)
     if (x == 1):
         ax[x,y].set_xlabel("Week")
     if (y == 0):
